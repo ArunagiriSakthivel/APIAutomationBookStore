@@ -65,7 +65,7 @@ public class BookStepDefinition {
     }
     
     @Then("Response should contain the author {string}")
-    public void response_should_contain_the_author(String string) {
+    public void response_should_contain_the_author(String expectedAuthor) {
     	 String actualAuthor = response.jsonPath().getString("author");
          Assert.assertEquals(actualAuthor, expectedAuthor);
          testContext.getExtentTest().log(Status.PASS, "Book Author matched: " + actualAuthor);

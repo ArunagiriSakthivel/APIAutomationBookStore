@@ -9,15 +9,21 @@ Feature: Bookstore API Functionality validation
     When Send a POST request to create the book
     Then Book should be created with response code 201
 
-
   @read @positive @regression
   Scenario: Fetch the created book by ID
     Given New book with title "Jane Eyre", author "Jane Austen", and year 1999
     When Send a POST request to create the book
     Then The book should be created with response code 201
     When Fetch the book by ID
-    Then Response should contain the title "Jane Eyre"
     Then Response should contain the author "Jane Austen"
+
+  @read @positive @regression
+  Scenario: Fetch the created book by ID
+    Given New book with title "Beautiful Tale", author "Darren Mop", and year 1997
+    When Send a POST request to create the book
+    Then The book should be created with response code 201
+    When Fetch the book by ID
+    Then Response should contain the title "Beautiful Tale"
 
   @update @positive @regression
   Scenario: Update the book title
@@ -28,8 +34,8 @@ Feature: Bookstore API Functionality validation
     Then Book should be updated with response code 200
     When Fetch the book by ID
     Then Response should contain the title "Clean Code (2nd Edition)"
-    
-   @delete @positive @regression
+
+  @delete @positive @regression
   Scenario: Delete an already availabe book from store
     Given New book with title "Bourne Idemtity", author "Robert Ludlum", and year 2003
     When Send a POST request to create the book
@@ -38,7 +44,7 @@ Feature: Bookstore API Functionality validation
     Then Book should be deleted with response code 204
 
   @delete @positive @regression
-  Scenario: Delete an already availabe book from book store 
+  Scenario: Delete an already availabe book from store
     Given New book with title "The Match", author "Charles Dickens", and year 2003
     When Send a POST request to create the book
     Then Book should be created with response code 201
