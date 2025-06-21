@@ -2,7 +2,7 @@ BookStore-API Automation Framework
 
 1.Purpose&Description:
 
-This project automates REST API testing for a BookStore application using Java, RestAssured, TestNG, Cucumber, and Extent Reports for reporting. 
+This project automates REST API testing for a BookStore application using Java, RestAssured, TestNG, Cucumber and Extent Reports for reporting. 
 
 
 2.Tools & TechStack:
